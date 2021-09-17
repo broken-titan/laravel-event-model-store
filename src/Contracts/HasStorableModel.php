@@ -5,6 +5,7 @@
 	use Illuminate\Database\Eloquent\Model;
 
 	interface HasStorableModel {
-		public function model() : Model;
-		public function modelKey() : string;
+		public function storableModel() : Model;
+		public function storableModelKey() : string;
+		public function storableData() : array;
 	}
