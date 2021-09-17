@@ -9,11 +9,10 @@
 		public function handle($event) {
 			if ($event instanceof HasStorableModel) {
 				$eventClass = $this->eventModel();
-				$model = $event->model();
 				$eventClass::create([
-					"model" => $model->toArray(),
-					"model_id" => $event->modelKey(),
-					"model_type" => get_class($model),
+					"data" => $event->storableData(),
+					"model_id" => $event->storableModelKey(),
+					"model_type" => get_class($event->storableModel()),
 					"type" => class_basename($event)
 				]);
 			} else {
