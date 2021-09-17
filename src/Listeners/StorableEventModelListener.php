@@ -11,7 +11,7 @@
 				$eventClass = $this->eventModel();
 				$eventClass::create([
 					"data" => $event->storableData(),
-					"model_id" => $event->storableModelKey(),
+					"model_id" => $event->storableModel()->getKey(),
 					"model_type" => get_class($event->storableModel()),
 					"type" => class_basename($event)
 				]);
