@@ -7,14 +7,12 @@
     class StorableEventModel extends Model {
         protected $attributes = [
             "data" => null,
-            "model" => null,
             "model_id" => null,
             "model_type" => null,
             "type" => null
         ];
         protected $fillable = [
             "data",
-            "model",
             "model_id",
             "model_type",
             "type"
